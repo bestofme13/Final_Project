@@ -1,0 +1,20 @@
+#ip connection
+vboxuser@Ubuntu:/home/zhan$ sudo su zhan
+zhan@ubuntu: $ sudo apt-get install network-manager
+zhan@ubuntu: $ sudo apt-get install dhcpcd
+Do you want to continue? [Y/n] y
+zhan@ubuntu: $ ip link show
+zhan@ubuntu: $ sudo dhcpcd enpes3
+zhan@ubuntu: $ ip link show
+zhan@ubuntu:~$ ping google.com -c3
+
+#NAT connection
+zhan@ubuntu:~$ sudo sysctl -w net.ipv4.ip_forward=1
+net.ipv4.ip_forward = 1
+zhan@ubuntu:~$ sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+zhan@ubuntu:~$ sudo iptables -A FORWARD -i eth1 -j ACCEPT
+zhan@ubuntu: $ iptables -vnL -t nat
+zhan@ubuntu: $ sudo su -
+root@ubuntu:-# iptables -vnL -t nat
+
+
