@@ -12,13 +12,13 @@ Work Phone []:
 Home Phone []:
 Other []:
 Is the information correct? [Y/n] y
-vboxuser@ubuntu: $ sudo su -
+vboxuser@ubuntu: $ sudo su ~
 root@ubuntu:~#
 
-root@ubuntu:-# sudo useradd student2
-root@ubuntu:-# sudo passwd student
+root@ubuntu:~# sudo useradd student2
+root@ubuntu:~# sudo passwd student
 New password:
 
-zhangubuntu:-$ whoant
+zhan@ubuntu:~$ whoami
 zhan
-zhangubuntu:-$ 
+zhan@ubuntu:~$ 
