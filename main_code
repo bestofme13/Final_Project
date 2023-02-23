@@ -1,0 +1,30 @@
+#task1
+vboxuser@ubuntu: $ sudo adduser zhan
+[sudo] password for vboxuser:
+Adding user 'zhan'
+Adding new group 'zhan' (1004)
+Adding new user 'zhan' (1994) with group 'zhan
+Creating home directory /home/zhan' ...
+Copying files from /etc/skel'
+New password:
+passwd: password updated successfully
+Changing the user information for zhan
+Enter the new value, or press ENTER for the default
+Full Name []: Ainara Zhabassova
+Room Number []:
+Work Phone []:
+Home Phone []:
+Other []:
+Is the information correct? [Y/n] y
+vboxuser@ubuntu: $ sudo su -
+root@ubuntu:~#
+
+root@ubuntu:-# sudo useradd student
+useradd: user 'student' already exists
+root@ubuntu:-# sudo useradd student2
+root@ubuntu:-# sudo passwd student
+New password:
+
+zhangubuntu:-$ whoant
+zhangubuntu:-$
+zhan
