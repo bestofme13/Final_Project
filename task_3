@@ -1,0 +1,38 @@
+zhan@ubuntu: $ unane r
+5.19.8-29-generic
+zhan@buntu:~$ cd ~/Downloads
+zhan@ubuntu:~/Downloads$ wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.12.tar.xz
+zhan@ubuntu:~/Downloads ls
+Linux-6.1.12.tar.xz 
+zhan@ubuntu:~/Downloads$ mkdir linux_kernel
+zhan@ubuntu:~/Downloads mv linux-6.1.12.tar.xz ~/Downloads/linux_kernel
+zhan@ubuntu:~/Downloads/linux_kernel$ ls
+Linux-6.1.12 Linux-6.1.12.tar.xz
+zhan@ubuntu:~/Downloads/linux_kernel$ tar xvf linux-6.1.12.tar.xz
+zhan@ubuntu:~/Downloads/linux_kernel$ cd linux-6.1.12/
+zhan@ubuntu:~/Downloads/linux_kernel/linux-6.1.12$ ls
+zhan@ubuntu:~/Downloads/linux_kernel/linux-6.1.12$ ls -a
+zhan@ubuntu:~/Downloads/linux_kernel/linux-6.1.12$ du -sh
+1,5G    .
+zhan@ubuntu:~/Downloads/linux_kernel/linux-6.1.12$ su vboxuser
+vboxuser@ubuntu:/home/zhan/Downloads/linux_kernel/linux-6.1.12$ sudo usermod -aG sudo zhan
+vboxuser@ubuntu:/home/zhan/Downloads/linux_kernel/linux-6.1.12$ sudo su zhan
+zhan@ubuntu:~/Downloads/linux_kernel/linux-6.1.12$ sudo apt-get install git fakeroot build-essential nurses-dev xz-utils libssl-dev bc flex libelf-dev bison libncurses-dev rsync gcc libncurses5-dev
+zhan@ubuntu:~/Downloads/linux_kernel/linux-6.1.12$ sudo update-grub
+zhan@ubuntu:~/Downloads/linux_kernel/linux-6.1.12$ make oldconfig
+zhan@ubuntu:~/Downloads/linux_kernel/linux-6.1.12$ ls /boot/
+zhan@ubuntu:~/Downloads/linux_kernel/linux-6.1.12$ sudo cp arch/x86/boot/bzImage/ /boot/vmlinuz-linux
+zhan@ubuntu:~/Downloads/linux_kernel/linux-6.1.12$ make menuconfig
+zhan@ubuntu:~/Downloads/linux_kernel/linux-6.1.12$ cd ~
+zhan@ubuntu:~$ sudo add-apt-repository ppa:cappelikan/ppa
+zhan@ubuntu:~$ sudo apt update
+zhan@ubuntu:~$ sudo apt install mainline
+zhan@ubuntu:~$ uname -r
+5.19.0-29-generic
+zhan@ubuntu:~$ uname -a 
+Linux Ubuntu 5.19.0-29-generic #30-Ubuntu SMP PREEMPT_DYNAMIC Wed Jan 4 12:14:09 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+zhan@ubuntu:~/custom_modules$ make
+zhan@ubuntu:~/custom_modules$ sudo insmod helloworldmodule.ko
+zhan@ubuntu:~/custom_modules$ lsmod | grep hello
+zhan@ubuntu:~/custom_modules$ sudo dmesg | tail 
+[25376.38844] Hello World!
